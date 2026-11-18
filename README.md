@@ -15,6 +15,7 @@
 | `Dockerfile` | Builds the image from `python:3.12-slim` (contains both server and client) |
 | `compose.yaml` | `kvserver` + two headless clients (`alice`, `bob`) on network `kvnet` |
 | `demo/` | Screenshots and logs of the shell demo and the Compose demo |
+| `PROMPTS.md` | The AI prompts used for this homework |
 
 ## Protocol
 
@@ -130,12 +131,4 @@ Evidence: `demo/compose-demo.log`, `demo/compose-laptop-client.log`, `demo/compo
 
 I used Claude (Anthropic) in a claude.ai Project for ENPM631 to plan the work and generate `server.py`, `client.py`, `Dockerfile`, `compose.yaml` and this README. I ran every command myself on my Ubuntu machine and checked the output at each step; the screenshots and logs in `demo/` come from those runs.
 
-### Prompts
-
-My main prompts, in order, lightly edited for length. Screenshots I pasted for review are noted in brackets.
-
-1. I want to use this thread for my course project. The project builds up in the form of a series of three consecutive homework assignments, provided in three consecutive weeks.
-2. You can read the instructions for the 1st week assignment provided by the professor. I am attaching the PDF. *(attached: Week 11 Homework Instructions)*
-3. A few baselines I wanted to discuss with you: 1. I will use my Dell-Ubuntu 2. I plan to use my GitHub and share the repo, not a zip.
-4. The professor mentioned in the class to keep a simple architecture with 1 server and 2 clients. Why are we repeating instructions that clearly say that "containerize one image (or two) with a pinned tag"?
-5. Before I proceed, I renamed yourname to 'bhaumik' matching my umd email. Then deleted demo folder, and ran everything again. Check all screenshots. *(screenshots: shell demo)*
+My prompts are listed in [PROMPTS.md](PROMPTS.md).
