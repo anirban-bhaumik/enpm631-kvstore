@@ -1,0 +1,35 @@
+services:
+  kvserver:
+    build: .
+    image: bhaumik/kvstore:1.0
+    ports:
+      - "5050:5050"
+    networks:
+      - kvnet
+    healthcheck:
+      test: ["CMD", "python", "-c", "import socket; socket.create_connection(('localhost', 5050), 2)"]
+      interval: 2s
+      timeout: 3s
+      retries: 10
+
+  alice:
+    image: bhaumik/kvstore:1.0
+    command: ["python", "client.py", "kvserver", "5050", "alice", "SET color blue", "SET course ENPM631", "KEYS"]
+    networks:
+      - kvnet
+    depends_on:
+      kvserver:
+        condition: service_healthy
+
+  bob:
+    image: bhaumik/kvstore:1.0
+    command: ["python", "client.py", "kvserver", "5050", "bob", "GET color", "DEL color", "GET color", "GET course"]
+    networks:
+      - kvnet
+    depends_on:
+      alice:
+        condition: service_completed_successfully
+
+networks:
+  kvnet:
+    driver: bridge

@@ -1,0 +1,16 @@
+KV server listening on 0.0.0.0:5050
+[+] connection from 127.0.0.1:32856
+[bob] HELLO bob -> WELCOME bob
+[+] connection from 127.0.0.1:48844
+[alice] HELLO alice -> WELCOME alice
+[alice] SET color blue -> OK
+[alice] SET course ENPM631 -> OK
+[alice] KEYS -> KEYS color course
+[alice] QUIT -> BYE
+[-] alice disconnected
+[bob] GET color -> VALUE blue
+[bob] DEL color -> DELETED
+[bob] GET color -> NOT_FOUND
+[bob] GET course -> VALUE ENPM631
+[bob] QUIT -> BYE
+[-] bob disconnected

@@ -1,0 +1,32 @@
+alice-1  | WELCOME alice
+alice-1  | > SET color blue
+alice-1  | OK
+alice-1  | > SET course ENPM631
+alice-1  | OK
+alice-1  | > KEYS
+alice-1  | KEYS color course
+kvserver-1  | KV server listening on 0.0.0.0:5050
+kvserver-1  | [+] connection from 172.19.0.3:52312
+kvserver-1  | [alice] HELLO alice -> WELCOME alice
+kvserver-1  | [alice] SET color blue -> OK
+kvserver-1  | [alice] SET course ENPM631 -> OK
+kvserver-1  | [alice] KEYS -> KEYS color course
+kvserver-1  | [alice] QUIT -> BYE
+kvserver-1  | [-] alice disconnected
+kvserver-1  | [+] connection from 172.19.0.3:52316
+kvserver-1  | [bob] HELLO bob -> WELCOME bob
+kvserver-1  | [bob] GET color -> VALUE blue
+kvserver-1  | [bob] DEL color -> DELETED
+kvserver-1  | [bob] GET color -> NOT_FOUND
+kvserver-1  | [bob] GET course -> VALUE ENPM631
+kvserver-1  | [bob] QUIT -> BYE
+kvserver-1  | [-] bob disconnected
+bob-1       | WELCOME bob
+bob-1       | > GET color
+bob-1       | VALUE blue
+bob-1       | > DEL color
+bob-1       | DELETED
+bob-1       | > GET color
+bob-1       | NOT_FOUND
+bob-1       | > GET course
+bob-1       | VALUE ENPM631

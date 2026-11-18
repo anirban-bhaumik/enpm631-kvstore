@@ -1,0 +1,28 @@
+kvserver-1  | KV server listening on 0.0.0.0:5050
+kvserver-1  | [+] connection from 172.19.0.3:52312
+kvserver-1  | [alice] HELLO alice -> WELCOME alice
+kvserver-1  | [alice] SET color blue -> OK
+kvserver-1  | [alice] SET course ENPM631 -> OK
+kvserver-1  | [alice] KEYS -> KEYS color course
+kvserver-1  | [alice] QUIT -> BYE
+kvserver-1  | [-] alice disconnected
+kvserver-1  | [+] connection from 172.19.0.3:52316
+kvserver-1  | [bob] HELLO bob -> WELCOME bob
+kvserver-1  | [bob] GET color -> VALUE blue
+kvserver-1  | [bob] DEL color -> DELETED
+kvserver-1  | [bob] GET color -> NOT_FOUND
+kvserver-1  | [bob] GET course -> VALUE ENPM631
+kvserver-1  | [bob] QUIT -> BYE
+kvserver-1  | [-] bob disconnected
+kvserver-1  | [+] connection from 172.19.0.1:61684
+kvserver-1  | [carol] HELLO carol -> WELCOME carol
+kvserver-1  | [carol] GET course -> VALUE ENPM631
+kvserver-1  | [carol] SET laptop yes -> OK
+kvserver-1  | [carol] QUIT -> BYE
+kvserver-1  | [-] carol disconnected
+kvserver-1  | [+] connection from 172.19.0.3:51168
+kvserver-1  | [dave] HELLO dave -> WELCOME dave
+kvserver-1  | [dave] GET laptop -> VALUE yes
+kvserver-1  | [dave] KEYS -> KEYS course laptop
+kvserver-1  | [dave] QUIT -> BYE
+kvserver-1  | [-] dave disconnected

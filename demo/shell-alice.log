@@ -1,0 +1,7 @@
+WELCOME alice
+> SET color blue
+OK
+> SET course ENPM631
+OK
+> KEYS
+KEYS color course
